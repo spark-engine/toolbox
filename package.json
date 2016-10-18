@@ -1,0 +1,24 @@
+{
+  "name": "compose-toolbox",
+  "version": "1.0.0",
+  "description": "A collection of small tools to simplify front-end development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mochify --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compose-ui/toolbox.git"
+  },
+  "authors": ["Kyle Foster", "Brandon Mathis"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/compose-ui/toolbox/issues"
+  },
+  "homepage": "https://github.com/compose-ui/toolbox#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mochify": "^2.17.0"
+  }
+}
+
