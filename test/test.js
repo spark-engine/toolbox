@@ -139,7 +139,7 @@ describe( 'Toolbox', function(){
         assert.equal( count.textContent, '3' )
         done()
 
-      }, 30)
+      }, 40)
     })
 
   })
