@@ -1,6 +1,8 @@
 var assert = require('chai').assert
 var toolbox = require('../')
 
+require('./_custom_event')
+
 var injectHTML = function(html) {
   document.body.insertAdjacentHTML('beforeend', html)
   return document.body.lastChild
@@ -117,7 +119,7 @@ describe( 'Toolbox', function(){
       count.textContent = counter
     }
 
-    var add = new Event('add')
+    var add = new CustomEvent('add')
     var trigger = function(timeout) {
       setTimeout( function(){ document.body.dispatchEvent(add); }, timeout )
     }
