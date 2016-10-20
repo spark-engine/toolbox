@@ -3,13 +3,24 @@ var toolbox = require('../')
 
 require('./_custom_event')
 
+// Utlitiy function for easily appending to HTML
 var injectHTML = function(html) {
   document.body.insertAdjacentHTML('beforeend', html)
   return document.body.lastChild
 }
 
-var now = function() {
-  return Date.now();
+var repeat = function( func, count, delay, complete ) {
+  var counter = 0
+  var interval = setInterval( function() { 
+
+    func()
+    counter += 1 
+
+    if ( count == counter ) {
+      clearInterval( interval )
+      if (complete) { complete() }
+    }
+  }, delay )
 }
 
 describe( 'Toolbox', function(){
@@ -111,41 +122,70 @@ describe( 'Toolbox', function(){
 
   describe( 'debounce', function() {
 
-    count = injectHTML( "<div id='count'>0</div>" )
+    var counter,                                           // Track events triggered
+        interval,                                          // Select an interval for repeat functions
+        count   = injectHTML( "<div id='count'>0</div>" )  // Element for counting triggers
 
-    var counter = 0
+    // This is the function we'll be debouncing
     var increment = function() {
       counter += 1
       count.textContent = counter
     }
 
-    var add = new CustomEvent('add')
-    var trigger = function(timeout) {
-      setTimeout( function(){ document.body.dispatchEvent(add); }, timeout )
+    // Repeat a function options.count every options.interval after options.delay
+    var testInterval = function ( func, options ) {
+
+      counter = 0
+      options = Object.assign( {}, { count: 3, delay: 0 }, options )
+
+      setTimeout( function() { 
+
+        repeat( func, options.count, options.interval, function() {
+          // Test that the count equals expected results
+          assert.equal( count.textContent, options.expected )
+        })
+
+      }, options.delay )
+
     }
 
-    var debouncedIncrement = toolbox.debounce( increment, 5, { trailing: true })
-    document.body.addEventListener('add', debouncedIncrement)
+    describe( 'trailing: true', function() {
 
-    it('only fires at the correct intervals', function(done) {
+      var incrementCounter = toolbox.debounce( increment, 5, { trailing: true })
+      
+      it('prevents debounce function from firing if intervals are too close together', function(done) {
 
-      trigger(1)    // ignored because it hasn't been long enough since last event
+        // Test every 4 miliseconds (too short to trigger debounce) expecting 0
+        testInterval ( incrementCounter, { interval: 4, expected: '0' } )
+        setTimeout( done, 20 )
 
-      trigger(2)    // Fire debounce
-      trigger(10)   // Fire debounce
+      })
 
-      trigger(11)   // ignored because it hasn't been long enough since last event
-      trigger(18)   // Fire debounce
+      it('fires debounce function if intervals are far apart', function(done) {
 
-      setTimeout(function() {
+        // Test every 7 miliseconds (should trigger debounce) expecting 2
+        testInterval ( incrementCounter, { interval: 7, expected: '2', delay: 15 } )
 
-        assert.equal( count.textContent, '3' )
-        done()
+        // note the third debounced function call is delayed so it is not expected
+        setTimeout( done, 20 )
 
-      }, 40)
+      })
     })
 
-  })
+    describe( 'leading: true', function() {
 
+      var incrementCounter = toolbox.debounce( increment, 5, { leading: true })
+      
+      it('fires one debounce function if intervals are too close together', function(done) {
+
+        setTimeout( function() {
+          // Test every 4 miliseconds (too short to trigger debounce) expecting 0
+          testInterval ( incrementCounter, { interval: 4, expected: '1' } )
+          setTimeout( done, 20 )
+
+        }, 50)
+      })
+    })
+  })
 })
 
