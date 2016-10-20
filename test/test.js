@@ -128,11 +128,14 @@ describe( 'Toolbox', function(){
     document.body.addEventListener('add', debouncedIncrement)
 
     it('only fires at the correct intervals', function(done) {
-      trigger(1)
-      trigger(2)    // should fire
-      trigger(10)   // should fire
-      trigger(11)   // should not fire because it hasn't been long enough since last event
-      trigger(16)   // should fire
+
+      trigger(1)    // ignored because it hasn't been long enough since last event
+
+      trigger(2)    // Fire debounce
+      trigger(10)   // Fire debounce
+
+      trigger(11)   // ignored because it hasn't been long enough since last event
+      trigger(18)   // Fire debounce
 
       setTimeout(function() {
 
