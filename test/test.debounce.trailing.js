@@ -53,19 +53,4 @@ describe( 'debounce', function() {
 
     })
   })
-
-  describe( 'leading: true', function() {
-
-    var incrementCounter = toolbox.debounce( increment, 5, { leading: true })
-    
-    it('fires one debounce function if intervals are too close together', function(done) {
-
-      setTimeout( function() {
-        // Test every 4 miliseconds (too short to trigger debounce) expecting 0
-        testInterval ( incrementCounter, { interval: 4, expected: '1' } )
-        setTimeout( done, 20 )
-
-      }, 80)
-    })
-  })
 })
