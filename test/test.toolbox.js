@@ -1,6 +1,5 @@
 var assert = require('chai').assert
 var toolbox = require('../')
-
 var utils = require('./_utils')
 
 
