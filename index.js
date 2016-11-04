@@ -2,7 +2,6 @@ require( './lib/shims/_class_list' )
 
 var merge    = require( './lib/shims/_object.assign' )
 var scrollTo = require( './lib/scrollto' )
-var unhover  = require( './lib/unhover' )
 var ease     = require( './lib/ease' )
 
 var Toolbox = {
