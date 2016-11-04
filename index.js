@@ -1,8 +1,15 @@
-require('./lib/shims/_classlist')
-require('./lib/shims/_object.assign.js')
-var timing = require('./lib/timing.js')
+require( './lib/shims/_class_list' )
+
+var merge    = require( './lib/shims/_object.assign' )
+var scrollTo = require( './lib/scrollto' )
+var unhover  = require( './lib/unhover' )
+var ease     = require( './lib/ease' )
 
 var Toolbox = {
+
+  scrollTo: scrollTo,
+  merge: merge,
+  ease: ease,
 
   // Get closest DOM element up the tree that matches a given selector
   getClosest: function ( el, selector ) {
@@ -26,10 +33,15 @@ var Toolbox = {
     return ( el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector ).call( el, selector );
   },
 
-  throttle: timing.throttle,
+  wordCount: function( str ) {
+    var matches = str.match( /\S+/g );
+    return matches ? matches.length : 0;
+  },
 
-  debounce: timing.debounce
-  
+  fromTop: function( el ) {
+    return Math.round( el.getBoundingClientRect().top + window.pageYOffset );
+  }
+
 }
 
 
