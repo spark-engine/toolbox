@@ -5,7 +5,7 @@ var merge    = require( './lib/shims/_object.assign' )
 var scrollTo = require( './lib/scrollto' )
 var ease     = require( './lib/ease' )
 
-var Toolbox = {
+var toolbox = {
 
   event: event,
   scrollTo: scrollTo,
@@ -15,7 +15,7 @@ var Toolbox = {
   // Get closest DOM element up the tree that matches a given selector
   getClosest: function ( el, selector ) {
     for ( ; el && el !== document; el = el.parentNode ) {
-      if ( self.matches( el, selector ) ) return el;
+      if ( toolbox.matches( el, selector ) ) return el;
     }
     return false;
   },
@@ -46,4 +46,4 @@ var Toolbox = {
 }
 
 
-module.exports = self = Toolbox
+module.exports = toolbox
