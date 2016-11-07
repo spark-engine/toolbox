@@ -1,11 +1,13 @@
-require( './lib/shims/_class_list' )
+require( './lib/shims/_classlist' )
 
+var event    = require( 'compose-event' )
 var merge    = require( './lib/shims/_object.assign' )
 var scrollTo = require( './lib/scrollto' )
 var ease     = require( './lib/ease' )
 
 var Toolbox = {
 
+  event: event,
   scrollTo: scrollTo,
   merge: merge,
   ease: ease,
