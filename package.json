@@ -1,6 +1,6 @@
 {
   "name": "compose-toolbox",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A collection of small tools to simplify front-end development.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/compose-ui/toolbox#readme",
   "dependencies": {
-    "compose-event": "^1.4.0"
+    "compose-event": "^1.4.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
