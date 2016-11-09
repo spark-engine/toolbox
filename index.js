@@ -3,12 +3,14 @@ require( './lib/shims/_classlist' )
 var event    = require( 'compose-event' )
 var merge    = require( './lib/shims/_object.assign' )
 var scrollTo = require( './lib/scrollto' )
+var fromTop  = require( './lib/fromtop' )
 var ease     = require( './lib/ease' )
 
 var toolbox = {
 
   event: event,
   scrollTo: scrollTo,
+  fromTop: fromTop,
   merge: merge,
   ease: ease,
 
@@ -37,10 +39,6 @@ var toolbox = {
   wordCount: function( str ) {
     var matches = str.match( /\S+/g );
     return matches ? matches.length : 0;
-  },
-
-  fromTop: function( el ) {
-    return Math.round( el.getBoundingClientRect().top + window.pageYOffset );
   }
 
 }
