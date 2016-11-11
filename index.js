@@ -44,6 +44,10 @@ var toolbox = {
   // Easy access to slice for converting objects into arrays of values.
   slice: function( obj, count ) {
     return Array.prototype.slice.call( obj, count )
+  },
+
+  each: function( collection, callback ) {
+    return Array.prototype.forEach.call( collection, callback )
   }
 
 }
