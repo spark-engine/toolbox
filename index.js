@@ -48,6 +48,20 @@ var toolbox = {
 
   each: function( collection, callback ) {
     return Array.prototype.forEach.call( collection, callback )
+  },
+
+  formData: function( rootEl ) {
+    var formData  = new FormData(),
+        fields = rootEl.querySelectorAll( 'input[name]' )
+
+    // Loop over fields
+    toolbox.each( fields, function( field ) {
+      // Append current field’s name/value to new formData object
+      formData.append( field.name, field.value );
+    })
+
+    // Then return said formData object
+    return formData;
   }
 
 }
