@@ -1,7 +1,8 @@
+// Shims
 require( './lib/shims/_classlist' )
+var merge    = require( './lib/shims/_object.assign' )
 
 var event    = require( 'compose-event' )
-var merge    = require( './lib/shims/_object.assign' )
 var scrollTo = require( './lib/scrollto' )
 var fromTop  = require( './lib/fromtop' )
 var ease     = require( './lib/ease' )
