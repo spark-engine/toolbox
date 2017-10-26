@@ -22,4 +22,8 @@ describe( '.getClosest', function() {
     assert.notEqual( toolbox.getClosest( inner, '.outer' ), middle )
   })
 
+  it('finds closest element', function(){
+    assert.equal( toolbox.getClosest( inner, outer ), outer )
+  })
+
 })

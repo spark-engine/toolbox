@@ -18,9 +18,16 @@ var toolbox = {
   // Get closest DOM element up the tree that matches a given selector
   getClosest: function ( el, selector ) {
     for ( ; el && el !== document; el = el.parentNode ) {
-      if ( toolbox.matches( el, selector ) ) return el;
+      if ( toolbox.matches( el, selector ) ) return el
     }
-    return false;
+    return false
+  },
+
+  hasParent: function ( el, parent ) {
+    for ( ; el && el !== document; el = el.parentNode ) {
+      if ( el == selector ) return true;
+    }
+    return false
   },
 
   // Get next DOM element that matches a given selector
