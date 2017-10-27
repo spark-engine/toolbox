@@ -1,6 +1,6 @@
 {
   "name": "compose-toolbox",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A collection of small tools to simplify front-end development.",
   "main": "index.js",
   "scripts": {

@@ -2,7 +2,7 @@ var assert = require('chai').assert
 var toolbox = require('../')
 var utils = require('./_utils')
 
-describe( '.getClosest', function() {
+describe( '.childOf', function() {
 
   utils.injectHTML( "<p class='outer widget'><span class='middle widget'><span class='inner'></span></span></p>" )
 
@@ -10,16 +10,16 @@ describe( '.getClosest', function() {
   var middle = document.querySelector('.middle')
   var inner = document.querySelector('.inner')
 
-  it('finds closest element', function(){
-    assert.equal( toolbox.getClosest( inner, 'p' ), outer )
+  it('finds immediate parent', function(){
+    assert.isTrue( toolbox.childOf( inner, middle ) )
   })
 
-  it('finds closest class', function(){
-    assert.equal( toolbox.getClosest( inner, '.widget' ), middle )
+  it('finds ancestor element', function(){
+    assert.isTrue( toolbox.childOf( inner, outer ) )
   })
 
-  it('finds closest class', function(){
-    assert.notEqual( toolbox.getClosest( inner, '.outer' ), middle )
+  it('finds no parent', function(){
+    assert.isFalse( toolbox.childOf( middle, inner ) )
   })
 
 })

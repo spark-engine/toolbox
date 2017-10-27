@@ -23,9 +23,9 @@ var toolbox = {
     return false
   },
 
-  hasParent: function ( el, parent ) {
+  childOf: function ( el, parent ) {
     for ( ; el && el !== document; el = el.parentNode ) {
-      if ( el == selector ) return true;
+      if ( el == parent ) return true;
     }
     return false
   },
