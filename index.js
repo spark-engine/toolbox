@@ -1,11 +1,12 @@
 // Shims
 require( './lib/shims/_classlist' )
-var merge    = require( './lib/shims/_object.assign' )
-
-var event    = require( 'compose-event' )
-var scrollTo = require( './lib/scrollto' )
-var fromTop  = require( './lib/fromtop' )
-var ease     = require( './lib/ease' )
+var merge    = require( './lib/shims/_object.assign' ),
+    event    = require( 'compose-event' ),
+    luxon    = require( 'luxon' ),
+    time     = merge(require( './lib/time' ), luxon),
+    scrollTo = require( './lib/scrollto' ),
+    fromTop  = require( './lib/fromtop' ),
+    ease     = require( './lib/ease' )
 
 var toolbox = {
 
@@ -14,6 +15,7 @@ var toolbox = {
   fromTop: fromTop,
   merge: merge,
   ease: ease,
+  time: time,
 
   // Get closest DOM element up the tree that matches a given selector
   getClosest: function ( el, selector ) {

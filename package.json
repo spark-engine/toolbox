@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/compose-ui/toolbox#readme",
   "dependencies": {
-    "compose-event": "^1.9.1"
+    "compose-event": "^1.9.1",
+    "luxon": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
