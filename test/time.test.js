@@ -8,6 +8,20 @@ test( 'parses a time', () => {
   expect( time.parse('1524694729228').day ).toBe( 25 )
 })
 
+test( 'parses a time with a timezone', () => {
+  expect( time.parse('1993-10-12 23:00', { zone: 'utc-6'}).toUTC().day ).toBe( 13 ) 
+})
+
+
+test( 'Pretty prints a date', () => {
+  expect( time.prettyPrint('1993-10-12 23:00 Z') ).toBe('1993-10-12 18:00 -05:00')
+  expect( time.prettyPrint('1993-10-12 23:00', { zone: 'utc' }) ).toBe('1993-10-12 23:00 Z')
+
+  const d = time.parse('1993-10-12 23:00 Z')
+  expect( time.prettyPrint(d, { zone: 'utc'}) ).toBe('1993-10-12 23:00 Z')
+  expect( time.prettyPrint(d, { zone: 'local'}) ).toBe('1993-10-12 18:00 -05:00')
+})
+
 test( 'rejects an invalid time', () => {
   expect( time.parse('test') ).toBeFalsy()
 })
