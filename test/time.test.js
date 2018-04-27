@@ -19,7 +19,7 @@ test( 'Pretty prints a date', () => {
 
   const d = time.parse('1993-10-12 23:00 Z')
   expect( time.prettyPrint(d, { zone: 'utc'}) ).toBe('1993-10-12 23:00 Z')
-  expect( time.prettyPrint(d, { zone: 'local'}) ).toBe('1993-10-12 18:00 -05:00')
+  expect( time.prettyPrint(d, { zone: 'utc-5'}) ).toBe('1993-10-12 18:00 -05:00')
 })
 
 test( 'rejects an invalid time', () => {
