@@ -14,7 +14,7 @@ test( 'parses a time with a timezone', () => {
 
 
 test( 'Pretty prints a date', () => {
-  expect( time.prettyPrint('1993-10-12 23:00 Z') ).toBe('1993-10-12 18:00 -05:00')
+  expect( time.prettyPrint('1993-10-12 23:00 Z', { zone: 'utc-5'}) ).toBe('1993-10-12 18:00 -05:00')
   expect( time.prettyPrint('1993-10-12 23:00', { zone: 'utc' }) ).toBe('1993-10-12 23:00 Z')
 
   const d = time.parse('1993-10-12 23:00 Z')
