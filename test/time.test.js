@@ -5,7 +5,7 @@ test( 'parses a time', () => {
   expect( time.parse('1993-10-12 05:34:21') ).toBeTruthy()
   expect( time.parse('1993-10-12 05:34:21').day ).toBe( 12 )
   expect( time.parse('2018-04-25T22:15:21.796Z').day ).toBe( 25 )
-  expect( time.parse('1524694729228').day ).toBe( 25 )
+  expect( time.parse('1524694729228', { millis: true } ).day ).toBe( 25 )
 })
 
 test( 'parses a time with a timezone', () => {
