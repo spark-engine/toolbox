@@ -62,13 +62,29 @@ var toolbox = {
 
   formData: function( rootEl ) {
     var formData  = new FormData(),
-        fields = rootEl.querySelectorAll( 'input[name]' )
+        fields = toolbox.slice(rootEl.querySelectorAll( 'input[name]:not([disabled]), select[name]:not([disabled]), textarea[name]:not([disabled])' ))
+    var fieldData = {}
+
+    // Remove any field which has a parent which is disabled
+    fields = fields.filter( function( f ) { return !toolbox.getClosest(f, '[disabled]') })
 
     // Loop over fields
-    toolbox.each( fields, function( field ) {
-      // Append current field’s name/value to new formData object
-      formData.append( field.name, field.value );
+    // reverse them because if there are two inputs with the same name
+    // the last input overrides the first.
+    fields.reverse().forEach( function( field ) {
+      if ( toolbox.matches( field, '[type=radio], [type=checkbox]') ) {
+        // If this is a checkbox or radio input, overwrite with checked values
+        if ( field.checked ) fieldData[field.name] = field
+      } else {
+        // Only add one value per field name
+        fieldData[field.name] = fieldData[field.name] || field
+      }
     })
+
+    for ( var name in fieldData ) {
+      // Append current field’s name/value to new formData object
+      formData.append( name, fieldData[name].value );
+    }
 
     // Then return said formData object
     return formData;
