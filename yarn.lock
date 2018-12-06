@@ -571,8 +571,9 @@ component-emitter@^1.2.1:
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
 
 compose-event@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/compose-event/-/compose-event-1.9.1.tgz#ee6c32018cb7bf00dbc7b82cc9dd8e316e826e11"
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/compose-event/-/compose-event-1.9.3.tgz#7d45bfd8cdba17d3686461d5e69b545ce145ea45"
+  integrity sha512-IW2EQYXfQ/z2KwI14XXWAJK+WC5+2F9k1P7OR9qCYYGeaV59wt0siYjIYlSfBROj+aXnftCcJ9F3eeID6CxP2w==
   dependencies:
     bean compose-ui/bean#1.0.15
     keymaster "^1.6.2"
@@ -1904,6 +1905,7 @@ jsprim@^1.2.2:
 keymaster@^1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/keymaster/-/keymaster-1.6.2.tgz#e1ae54d0ea9488f9f60b66b668f02e9a1946c6eb"
+  integrity sha1-4a5U0OqUiPn2C2a2aPAumhlGxus=
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"

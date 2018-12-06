@@ -60,6 +60,10 @@ var toolbox = {
     return Array.prototype.forEach.call( collection, callback )
   },
 
+  isElement: function ( item ) {
+    return item.constructor.toString().search(/HTML.+Element/) > -1
+  },
+
   formData: function( rootEl ) {
     var formData  = new FormData(),
         fields = toolbox.slice(rootEl.querySelectorAll( 'input[name]:not([disabled]), select[name]:not([disabled]), textarea[name]:not([disabled])' ))
