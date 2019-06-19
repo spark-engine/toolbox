@@ -5,11 +5,11 @@ var originHashA = hashA
 var hashB = { a: 'good', b: 'awesome' }
 var originHashB = hashB
 
-test( 'merges hashes', ()=> {
+test('merges hashes', ()=> {
 
-  var testObject = Object.assign( {}, hashA, hashB )
+  var testObject = Object.assign({}, hashA, hashB)
 
-  expect( originHashA ).toBe( hashA )
-  expect( originHashB ).toBe( hashB )
-  expect( testObject.a ).toBe( 'good' )
+  expect(originHashA).toBe(hashA)
+  expect(originHashB).toBe(hashB)
+  expect(testObject.a).toBe('good')
 })

@@ -1,5 +1,5 @@
 {
-  "name": "compose-toolbox",
+  "name": "@spark-engine/toolbox",
   "version": "1.6.3",
   "description": "A collection of small tools to simplify front-end development.",
   "main": "index.js",
@@ -18,10 +18,6 @@
     "url": "https://github.com/compose-ui/toolbox/issues"
   },
   "homepage": "https://github.com/compose-ui/toolbox#readme",
-  "dependencies": {
-    "compose-event": "^1.9.1",
-    "luxon": "^1.0.0"
-  },
   "devDependencies": {
     "jest": "^22.4"
   }

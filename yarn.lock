@@ -16,6 +16,19 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
+"@spark-engine/bean@^1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@spark-engine/bean/-/bean-1.0.15.tgz#db0fcc7b1939b7e0f2d5870ae0b676fdb0d9ecd0"
+  integrity sha512-5TjTbbdY5j771OD47MaeL3jhiQKripF35soEwlWxYmNeNFDDh6+WUQS8mJwXQ6JAZq7U23hiNuO1Qm2InjYqTA==
+
+"@spark-engine/event@>= 1.9 < 2":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@spark-engine/event/-/event-1.11.0.tgz#5508fd3f95b5690ab42e0ba6c31ef13bd0983419"
+  integrity sha512-+1IBSQ+LBirJ8uGSg5vYnbd0aGbWqcc6F4PLKTek7RqI9En8+I05YjQNc9R7lMeivHRimJfyKRqbfhy5F8/OjA==
+  dependencies:
+    "@spark-engine/bean" "^1.0.15"
+    keymaster "^1.6.2"
+
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -369,10 +382,6 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-bean@compose-ui/bean#1.0.15:
-  version "1.0.15"
-  resolved "https://codeload.github.com/compose-ui/bean/tar.gz/3d8b864ccbbb113f94d4527a86a54c9bdac4aee7"
-
 block-stream@*:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/block-stream/-/block-stream-0.0.9.tgz#13ebfe778a03205cfe03751481ebb4b3300c126a"
@@ -569,14 +578,6 @@ compare-versions@^3.1.0:
 component-emitter@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
-
-compose-event@^1.9.1:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/compose-event/-/compose-event-1.9.3.tgz#7d45bfd8cdba17d3686461d5e69b545ce145ea45"
-  integrity sha512-IW2EQYXfQ/z2KwI14XXWAJK+WC5+2F9k1P7OR9qCYYGeaV59wt0siYjIYlSfBROj+aXnftCcJ9F3eeID6CxP2w==
-  dependencies:
-    bean compose-ui/bean#1.0.15
-    keymaster "^1.6.2"
 
 concat-map@0.0.1:
   version "0.0.1"
