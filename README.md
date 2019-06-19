@@ -14,6 +14,17 @@ Simple tools for working with the DOM.
 - `childOf(el, parent)` - Returns true if an element is a child of another element.
 - `isElement(el)` - Returns true if an object is of type HTML Element.
 - `formData(el)` - Returns [formData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData) for ajax form submission, assembled from all inputs beneath a given element. If any input is disabled or a child of a `[disabled]` element, they are omitted.
+- `scrollTo(to, options)` - This scrolls the document (or an element) to a y-coordinate or another element with an ease function.
+
+`scrollTo` Arguments:
+
+- `to` - a y-coordinate or DOM element.
+
+Options:
+
+- `callback: function` - function to trigger on complete
+- `duration: 500` - time in milliseconds to scroll (default: 500)
+- `scroll: element` - element to scroll (default: document root)
 
 ## Object Tools
 
@@ -40,17 +51,3 @@ collections of DOM tree nodes.
 
 Under the hood this maps to `Array.prototype.forEach.call(obj, func)`, which is casts DOM tree nodes as an array
 before iterating. It mostly exists to improve the readabilty of code.
-
-### `scrollTo(to, options)`
-
-This scrolls the document (or an element) to a y-coordinate or another element with an ease function.
-
-Arguments:
-
-- `to` - a y-coordinate or DOM element.
-
-Options:
-
-- `callback: function` - function to trigger on complete
-- `duration: 500` - time in milliseconds to scroll (default: 500)
-- `scroll: element` - element to scroll (default: document root)
