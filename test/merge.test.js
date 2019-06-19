@@ -7,7 +7,7 @@ var originHashB = hashB
 
 test('merges hashes', ()=> {
 
-  var testObject = Object.assign({}, hashA, hashB)
+  var testObject = toolbox.merge(hashA, hashB)
 
   expect(originHashA).toBe(hashA)
   expect(originHashB).toBe(hashB)
