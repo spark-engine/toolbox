@@ -16,19 +16,6 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@spark-engine/bean@^1.0.15":
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/@spark-engine/bean/-/bean-1.0.15.tgz#db0fcc7b1939b7e0f2d5870ae0b676fdb0d9ecd0"
-  integrity sha512-5TjTbbdY5j771OD47MaeL3jhiQKripF35soEwlWxYmNeNFDDh6+WUQS8mJwXQ6JAZq7U23hiNuO1Qm2InjYqTA==
-
-"@spark-engine/event@>= 1.9 < 2":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@spark-engine/event/-/event-1.11.0.tgz#5508fd3f95b5690ab42e0ba6c31ef13bd0983419"
-  integrity sha512-+1IBSQ+LBirJ8uGSg5vYnbd0aGbWqcc6F4PLKTek7RqI9En8+I05YjQNc9R7lMeivHRimJfyKRqbfhy5F8/OjA==
-  dependencies:
-    "@spark-engine/bean" "^1.0.15"
-    keymaster "^1.6.2"
-
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -1903,11 +1890,6 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-keymaster@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/keymaster/-/keymaster-1.6.2.tgz#e1ae54d0ea9488f9f60b66b668f02e9a1946c6eb"
-  integrity sha1-4a5U0OqUiPn2C2a2aPAumhlGxus=
-
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -1994,10 +1976,6 @@ lru-cache@^4.0.1:
   dependencies:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
-
-luxon@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.0.0.tgz#ec1cba8cf53be14d2375c2f17e3468eb195c20bb"
 
 makeerror@1.0.x:
   version "1.0.11"

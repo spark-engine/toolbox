@@ -1,4 +1,4 @@
-require('./lib/shims/_classlist')
+require('./lib/shims/_element.classlist')
 
 const scrollTo = require('./lib/scrollto'),
       fromTop  = require('./lib/fromtop'),
